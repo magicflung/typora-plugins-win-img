@@ -34,6 +34,7 @@ typora-plugins-win-img 插件在编辑时，跟之前没有任何差别。不论
 
 **安装步骤：**
 
+这个版本的方法：
 覆盖安装的方式在某些特定版本下会触发bug，建议按照这个 [issue](https://github.com/Thobian/typora-plugins-win-img/issues/5#issuecomment-565031864) 中的方法修改 `window.html` 文件而不是直接覆盖它，`plugins` 是新增目录不存在覆盖的问题。
 
 1. 下载插件代码；
@@ -41,6 +42,11 @@ typora-plugins-win-img 插件在编辑时，跟之前没有任何差别。不论
 3. 将复制的插件代码文件，粘贴到typora安装目录下的 `resources\app` 文件夹下；
 4. 安装完成，重启typora
 
+目前最新版本的方法：
+在typora安装目录下`resources\app` 找到`window.html`
+    在<script src="./lib.asar/pdf/pdf.min.js" defer="defer" async></script>后加上下面的一句
+    <script src="./plugins/image/upload.js" defer="defer"></script> 
+然后把下载的`plugins`复制到`resources\app` 
 ### 插件配置
 
 插件默认会将图片上传到个人站点上（[街边价](https://jiebianjia.com/?ref=github)），不能保证一直给大家提供服务，所以按照好插件后，强烈建议你换成自己的图片上传服务器。
@@ -151,8 +157,7 @@ $.image.init({
 
 ### 注意事项：
 
-1. 本插件是基于typora：`0.9.68` 版本编写的，其他版本尚未测试过；
-2. ~~`window.html` 代码文件，为typora自带文件，复制过去会替换源安装文件，以防万一可以先对它进行**备份**；~~ 目前有网友反馈直接覆盖在某些版本（比如：0.9.81）下会出现**无法打开 偏好设置 的bug**，建议参考这个 [issue](https://github.com/Thobian/typora-plugins-win-img/issues/5#issuecomment-565031864) 中的方式进行操作。
-3. Windows 系统盘默认会保护起来，可能需要系统管理才能操作这些文件，如粘贴失败注意看是否权限问题；
-4. 默认本地图片，将会被上传到 [街边价](https://jiebianjia.com) 这个网站，本着方便使用的原则提供了默认图片地址，但本站点属于个人站点，如使用人太多会限制使用（包括但不限于不允许上传、清理已上传文件等）；【！！重要！！】
-5. 由于`第4点`，强烈建议你按照 `插件配置` 设置你自己的图片空间；
+1. 本插件是基于typora：`0.9.68` 版本编写的，原作者没测试，我现在在最新版测试成功了；
+2. Windows 系统盘默认会保护起来，可能需要系统管理才能操作这些文件，如粘贴失败注意看是否权限问题；
+3. 默认本地图片，将会被上传到 [街边价](https://jiebianjia.com) 这个网站，本着方便使用的原则提供了默认图片地址，但本站点属于个人站点，如使用人太多会限制使用（包括但不限于不允许上传、清理已上传文件等）；【！！重要！！】
+4. 由于`第4点`，强烈建议你按照 `插件配置` 设置你自己的图片空间；
