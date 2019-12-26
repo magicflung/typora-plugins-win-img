@@ -34,7 +34,7 @@ typora-plugins-win-img 插件在编辑时，跟之前没有任何差别。不论
 
 **安装步骤：**
 
-这个版本的方法：
+这个版本的方法：  
 覆盖安装的方式在某些特定版本下会触发bug，建议按照这个 [issue](https://github.com/Thobian/typora-plugins-win-img/issues/5#issuecomment-565031864) 中的方法修改 `window.html` 文件而不是直接覆盖它，`plugins` 是新增目录不存在覆盖的问题。
 
 1. 下载插件代码；
@@ -42,11 +42,10 @@ typora-plugins-win-img 插件在编辑时，跟之前没有任何差别。不论
 3. 将复制的插件代码文件，粘贴到typora安装目录下的 `resources\app` 文件夹下；
 4. 安装完成，重启typora
 
-目前最新版本的方法：
-在typora安装目录下`resources\app` 找到`window.html`  
-    在`<script src="./lib.asar/pdf/pdf.min.js" defer="defer" async></script>`后加上下面的一句  
-    `<script src="./plugins/image/upload.js" defer="defer"></script>`   
-然后把下载的`plugins`复制到`resources\app` 
+目前最新版本的方法：  
+1. 在typora安装目录下`resources\app` 找到`window.html`,打开，找到`<script src="./lib.asar/pdf/pdf.min.js" defer="defer" async></script>`后加上下面的一句  `<script src="./plugins/image/upload.js" defer="defer"></script>`   
+2. 然后把下载的`plugins`复制到`resources\app` 
+
 ### 插件配置
 
 插件默认会将图片上传到个人站点上（[街边价](https://jiebianjia.com/?ref=github)），不能保证一直给大家提供服务，所以按照好插件后，强烈建议你换成自己的图片上传服务器。
