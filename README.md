@@ -46,6 +46,8 @@ typora-plugins-win-img 插件在编辑时，跟之前没有任何差别。不论
 1. 在typora安装目录下`resources\app` 找到`window.html`,打开，找到`<script src="./lib.asar/pdf/pdf.min.js" defer="defer" async></script>`后加上下面的一句  `<script src="./plugins/image/upload.js" defer="defer"></script>`   
 2. 然后把下载的`plugins`复制到`resources\app` 
 
+注意：可能有时有点击会无效，可以重新本地插入，就会上传
+
 ### 插件配置
 
 插件默认会将图片上传到个人站点上（[街边价](https://jiebianjia.com/?ref=github)），不能保证一直给大家提供服务，所以按照好插件后，强烈建议你换成自己的图片上传服务器。
@@ -156,7 +158,7 @@ $.image.init({
 
 ### 注意事项：
 
-1. 本插件是基于typora：`0.9.68` 版本编写的，原作者没测试，我现在在最新版测试成功了；
+1. 本插件是基于typora：`0.9.68` 版本编写的，我现在在最新版测试成功了；
 2. Windows 系统盘默认会保护起来，可能需要系统管理才能操作这些文件，如粘贴失败注意看是否权限问题；
 3. 默认本地图片，将会被上传到 [街边价](https://jiebianjia.com) 这个网站，本着方便使用的原则提供了默认图片地址，但本站点属于个人站点，如使用人太多会限制使用（包括但不限于不允许上传、清理已上传文件等）；【！！重要！！】
 4. 由于`第4点`，强烈建议你按照 `插件配置` 设置你自己的图片空间；
