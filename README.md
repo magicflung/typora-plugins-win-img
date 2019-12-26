@@ -43,9 +43,9 @@ typora-plugins-win-img 插件在编辑时，跟之前没有任何差别。不论
 4. 安装完成，重启typora
 
 目前最新版本的方法：
-在typora安装目录下`resources\app` 找到`window.html`
-    在<script src="./lib.asar/pdf/pdf.min.js" defer="defer" async></script>后加上下面的一句
-    <script src="./plugins/image/upload.js" defer="defer"></script> 
+在typora安装目录下`resources\app` 找到`window.html`  
+    在`<script src="./lib.asar/pdf/pdf.min.js" defer="defer" async></script>`后加上下面的一句  
+    `<script src="./plugins/image/upload.js" defer="defer"></script>`   
 然后把下载的`plugins`复制到`resources\app` 
 ### 插件配置
 
